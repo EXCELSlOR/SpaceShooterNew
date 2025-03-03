@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="370a88d8-3902-4894-85b5-3cdca860eabf" name="Changes" comment="Шаблон проекта на pygame">
+    <list default="true" id="370a88d8-3902-4894-85b5-3cdca860eabf" name="Changes" comment="Создание персонажа &quot;Игрок&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
     </list>
@@ -23,21 +23,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "EXCELSlOR"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;EXCELSlOR&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/EXCELSlOR/SpaceShooterNew.git",
-    "accountId": "d044ed28-b390-4c9e-80e8-f6abbb30b6de"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/EXCELSlOR/SpaceShooterNew.git&quot;,
+    &quot;accountId&quot;: &quot;d044ed28-b390-4c9e-80e8-f6abbb30b6de&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2td7cIlWEqGgakjEjLFaQvOeRoW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -49,9 +49,15 @@
     "Python.game.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Y.Dmitriev\PycharmProjects\SpaceShooter" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SpaceShooter" />
@@ -105,11 +111,20 @@
       <option name="project" value="LOCAL" />
       <updated>1740674207931</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Создание персонажа &quot;Игрок&quot;">
+      <option name="closed" value="true" />
+      <created>1740678482701</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740678482701</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Шаблон проекта на pygame" />
-    <option name="LAST_COMMIT_MESSAGE" value="Шаблон проекта на pygame" />
+    <MESSAGE value="Создание персонажа &quot;Игрок&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создание персонажа &quot;Игрок&quot;" />
   </component>
 </project>
