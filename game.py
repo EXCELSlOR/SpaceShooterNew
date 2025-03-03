@@ -37,6 +37,11 @@ class Player(pygame.sprite.Sprite):
         if self.rect.right > WIDTH - INDENT:
             self.rect.right = WIDTH - INDENT
 
+    def shoot(self):
+        bullet = Bullet()
+        bullets.add(bullet)
+        all_sprites.add(bullet)
+
 
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
@@ -52,11 +57,27 @@ class Enemy(pygame.sprite.Sprite):
     def update(self):
         self.rect.x += self.speedx
         self.rect.y += self.speedy
-        if self.rect.top > HEIGHT:
+        if self.rect.top > HEIGHT or self.rect.right < 0 or self.rect.left > WIDTH:
             self.rect.x = random.randrange(WIDTH - self.rect.width)
             self.rect.y = random.randrange(-100, -30)
             self.speedx = random.randrange(-3, 4)
             self.speedy = random.randrange(1, 8)
+
+
+class Bullet(pygame.sprite.Sprite):
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface((10, 20))
+        self.image.fill(BLUE)
+        self.rect = self.image.get_rect()
+        self.rect.centerx = player.rect.centerx
+        self.rect.bottom = player.rect.y
+        self.speedy = -10
+
+    def update(self):
+        self.rect.y += self.speedy
+        if self.rect.bottom < 0:
+            self.kill()
 
 
 pygame.init()
@@ -66,6 +87,7 @@ clock = pygame.time.Clock()
 
 all_sprites = pygame.sprite.Group()
 enemies = pygame.sprite.Group()
+bullets = pygame.sprite.Group()
 
 player = Player()
 all_sprites.add(player)
@@ -81,11 +103,15 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            player.shoot()
     all_sprites.update()
 
     hits = pygame.sprite.spritecollide(player, enemies, False)
     if hits:
         running = False
+
+    hits = pygame.sprite.groupcollide(enemies, bullets, True, True)
 
     screen.fill(BLACK)
     all_sprites.draw(screen)
