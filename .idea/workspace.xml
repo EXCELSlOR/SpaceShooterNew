@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="370a88d8-3902-4894-85b5-3cdca860eabf" name="Changes" comment="Создание персонажа &quot;Противник&quot;">
+    <list default="true" id="370a88d8-3902-4894-85b5-3cdca860eabf" name="Changes" comment="Создание объекта &quot;Пуля&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
     </list>
@@ -127,13 +127,22 @@
       <option name="project" value="LOCAL" />
       <updated>1741017717322</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Создание объекта &quot;Пуля&quot;">
+      <option name="closed" value="true" />
+      <created>1741020440967</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741020440967</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Шаблон проекта на pygame" />
     <MESSAGE value="Создание персонажа &quot;Игрок&quot;" />
     <MESSAGE value="Создание персонажа &quot;Противник&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создание персонажа &quot;Противник&quot;" />
+    <MESSAGE value="Создание объекта &quot;Пуля&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создание объекта &quot;Пуля&quot;" />
   </component>
 </project>
