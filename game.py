@@ -22,35 +22,65 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.centerx = WIDTH / 2
         self.rect.bottom = HEIGHT - INDENT
+        self.shoot_delay = 300
+        self.shoot_timer = pygame.time.get_ticks() - self.shoot_delay
+        self.lives = 3
+        self.lives_timer = pygame.time.get_ticks()
+        self.hidden = False
+        self.health = 100
         self.speedx = 0
 
     def update(self):
         self.speedx = 0
-        keystate = pygame.key.get_pressed()
-        if keystate[pygame.K_LEFT]:
-            self.speedx = -5
-        if keystate[pygame.K_RIGHT]:
-            self.speedx = 5
-        self.rect.x += self.speedx
-        if self.rect.left < INDENT:
-            self.rect.left = INDENT
-        if self.rect.right > WIDTH - INDENT:
-            self.rect.right = WIDTH - INDENT
+        if player.hidden:
+            now = pygame.time.get_ticks()
+            if now - self.lives_timer > 1000:
+                self.hidden = False
+                self.rect.centerx = WIDTH / 2
+                self.rect.bottom = HEIGHT - INDENT
+        else:
+            keystate = pygame.key.get_pressed()
+            if keystate[pygame.K_LEFT]:
+                self.speedx = -5
+            if keystate[pygame.K_RIGHT]:
+                self.speedx = 5
+            if keystate[pygame.K_SPACE]:
+                self.shoot()
+            self.rect.x += self.speedx
+            if self.rect.left < INDENT:
+                self.rect.left = INDENT
+            if self.rect.right > WIDTH - INDENT:
+                self.rect.right = WIDTH - INDENT
+
+    def get_lives(self, value):
+        player.health -= value
+        if player.health <= 0:
+            player.lives -= 1
+            player.hidden = True
+            player.rect.top = HEIGHT + 50
+            player.lives_timer = pygame.time.get_ticks()
+            if player.lives > 0:
+                player.health = 100
+        return player.lives
 
     def shoot(self):
-        bullet = Bullet()
-        bullets.add(bullet)
-        all_sprites.add(bullet)
+        now = pygame.time.get_ticks()
+        if now - player.shoot_timer > self.shoot_delay:
+            bullet = Bullet()
+            bullets.add(bullet)
+            all_sprites.add(bullet)
+            player.shoot_timer = now
 
 
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((30, 30))
+        self.size = random.randrange(20, 60, 10)
+        self.image = pygame.Surface((self.size, self.size))
         self.image.fill(RED)
         self.rect = self.image.get_rect()
         self.rect.x = random.randrange(WIDTH - self.rect.width)
-        self.rect.y = random.randrange(-100, -30)
+        self.rect.y = random.randrange(-100, -50)
         self.speedx = random.randrange(-3, 4)
         self.speedy = random.randrange(1, 8)
 
@@ -88,6 +118,18 @@ def draw_text(text, size, color, x, y):
     screen.blit(surface, rect)
 
 
+def draw_health(value):
+    border_rect = pygame.Rect(10, 10, 102, 12)
+    health_rect = pygame.Rect(11, 11, value, 10)
+    pygame.draw.rect(screen, WHITE, border_rect)
+    pygame.draw.rect(screen, GREEN, health_rect)
+
+
+def draw_lives(value):
+    for i in range(value):
+        draw_text("X", 20, RED, WIDTH - 20 * (i + 1), 10)
+
+
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Shooter")
@@ -104,10 +146,15 @@ bullets = pygame.sprite.Group()
 player = Player()
 all_sprites.add(player)
 
-for i in range(10):
+
+def create_enemy():
     enemy = Enemy()
     enemies.add(enemy)
-all_sprites.add(enemies)
+    all_sprites.add(enemy)
+
+
+for i in range(10):
+    create_enemy()
 
 running = True
 while running:
@@ -115,24 +162,24 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-            player.shoot()
     all_sprites.update()
 
-    hits = pygame.sprite.spritecollide(player, enemies, False)
-    if hits:
-        delay = 3000
-        running = False
+    hits = pygame.sprite.spritecollide(player, enemies, True)
+    for hit in hits:
+        create_enemy()
+        if player.get_lives(hit.size) == 0:
+            delay = 3000
+            running = False
 
     hits = pygame.sprite.groupcollide(enemies, bullets, True, True)
     for hit in hits:
-        score += 1
-        enemy = Enemy()
-        enemies.add(enemy)
-        all_sprites.add(enemy)
+        score += 70 - hit.size
+        create_enemy()
 
     screen.fill(BLACK)
+    draw_health(player.health)
     draw_text(f"Очки: {score}", 20, WHITE, WIDTH / 2, 10)
+    draw_lives(player.lives)
     if delay == 0:
         all_sprites.draw(screen)
     else:
