@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="370a88d8-3902-4894-85b5-3cdca860eabf" name="Changes" comment="Вывод счёта и сообщения &quot;Игра завершена&quot;">
+    <list default="true" id="370a88d8-3902-4894-85b5-3cdca860eabf" name="Changes" comment="Добавлен счётчик жизней, индикатор жизни, изменён механизм стрельбы.">
+      <change afterPath="$PROJECT_DIR$/images/explosion_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/explosion_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/explosion_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/explosion_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/explosion_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/explosion_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/explosion_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/explosion_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/explosion_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/laser.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/meteor_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/meteor_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/meteor_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/meteor_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/player.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/shield.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds/crash.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds/explosion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds/shoot.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds/sound.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
     </list>
@@ -44,16 +64,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.game.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.game.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "full.screen.before.presentation.mode": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Y.Dmitriev/PycharmProjects/SpaceShooter/images"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Y.Dmitriev\PycharmProjects\SpaceShooter\images" />
+      <recent name="C:\Users\Y.Dmitriev\PycharmProjects\SpaceShooter" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Y.Dmitriev\PycharmProjects\SpaceShooter" />
     </key>
@@ -143,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741023452788</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавлен счётчик жизней, индикатор жизни, изменён механизм стрельбы.">
+      <option name="closed" value="true" />
+      <created>1741109862349</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741109862349</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -152,6 +185,7 @@
     <MESSAGE value="Создание персонажа &quot;Противник&quot;" />
     <MESSAGE value="Создание объекта &quot;Пуля&quot;" />
     <MESSAGE value="Вывод счёта и сообщения &quot;Игра завершена&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Вывод счёта и сообщения &quot;Игра завершена&quot;" />
+    <MESSAGE value="Добавлен счётчик жизней, индикатор жизни, изменён механизм стрельбы." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен счётчик жизней, индикатор жизни, изменён механизм стрельбы." />
   </component>
 </project>
